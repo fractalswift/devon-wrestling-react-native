@@ -2,6 +2,7 @@ import React from "react";
 import { Text, StyleSheet, View, Button, Image } from "react-native";
 
 import CountDown from "../components/CountDown";
+import Scores from "../components/Scores";
 
 class MatchScreen extends React.Component {
   state = {
@@ -168,25 +169,16 @@ class MatchScreen extends React.Component {
             scoringMode={this.state.scoringMode}
           />
 
-          <View style={styles.scores}>
-            <View style={styles.bluescore}>
-              <Text style={styles.score}>Top: {this.state.blueTopScore}</Text>
-              <Text style={styles.score}>Ride: {this.state.blueRideScore}</Text>
-              <Text style={styles.score}>Back: {this.state.blueBackScore}</Text>
-              <Text style={styles.score}>
-                Total: {this.state.blueTotalScore}
-              </Text>
-            </View>
-
-            <View style={styles.redscore}>
-              <Text style={styles.score}>Top: {this.state.redTopScore}</Text>
-              <Text style={styles.score}>Ride: {this.state.redRideScore}</Text>
-              <Text style={styles.score}>Back: {this.state.redBackScore}</Text>
-              <Text style={styles.score}>
-                Total: {this.state.redTotalScore}
-              </Text>
-            </View>
-          </View>
+       <Scores
+       blueTopScore={this.state.blueTopScore}
+       blueRideScore={this.state.blueRideScore}
+       blueBackScore={this.state.blueTopScore}
+       blueTotalScore={this.state.blueTotalScore}
+       redTopScore={this.state.redTopScore}
+       redRideScore={this.state.redRideScore}
+       redBackScore={this.state.redTopScore}
+       redTotalScore={this.state.redTotalScore}
+       />
         </View>
 
         <Button

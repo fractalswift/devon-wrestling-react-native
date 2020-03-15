@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, Image } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 
 const MatchTimer = props => {
   // If timeRemaining is a string that means the match is ended

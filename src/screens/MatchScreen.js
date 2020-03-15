@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, Button, Image } from "react-native";
 
 import CountDown from "../components/CountDown";
 import Scores from "../components/Scores";
+import ButtonPanel from "../components/ButtonPanel";
 
 class MatchScreen extends React.Component {
   state = {
@@ -160,78 +161,29 @@ class MatchScreen extends React.Component {
     console.log(this.props);
     return (
       <View style={styles.container}>
-        <View style={styles.tophalf}>
-          <Button title={this.state.centralButton} onPress={this.startTimer} />
-
           <CountDown
             matchStatus={this.state.matchStatus}
             timeRemaining={this.state.timeRemaining}
             scoringMode={this.state.scoringMode}
+            startTimer={this.startTimer}
+            centralButton={this.state.centralButton}
           />
 
-       <Scores
-       blueTopScore={this.state.blueTopScore}
-       blueRideScore={this.state.blueRideScore}
-       blueBackScore={this.state.blueTopScore}
-       blueTotalScore={this.state.blueTotalScore}
-       redTopScore={this.state.redTopScore}
-       redRideScore={this.state.redRideScore}
-       redBackScore={this.state.redTopScore}
-       redTotalScore={this.state.redTotalScore}
-       />
-        </View>
+          <Scores
+            blueTopScore={this.state.blueTopScore}
+            blueRideScore={this.state.blueRideScore}
+            blueBackScore={this.state.blueTopScore}
+            blueTotalScore={this.state.blueTotalScore}
+            redTopScore={this.state.redTopScore}
+            redRideScore={this.state.redRideScore}
+            redBackScore={this.state.redTopScore}
+            redTotalScore={this.state.redTotalScore}
+          />
 
-        <Button
-          title="Neutral"
-          onPress={() => {
-            this.updateScoreMode("Neutral");
-          }}
-        />
+        <ButtonPanel 
+        updateScoreMode={this.updateScoreMode}/>
 
-        <View style={styles.bottomhalf}>
-          <View style={styles.buttonsleft}>
-            <Button
-              title="Top Pin"
-              onPress={() => {
-                this.updateScoreMode("blue top pin");
-              }}
-            />
-            <Button
-              title="Ride"
-              onPress={() => {
-                this.updateScoreMode("blue ride");
-              }}
-            />
-            <Button
-              title="Back"
-              onPress={() => {
-                this.updateScoreMode("blue back");
-              }}
-            />
-          </View>
-          <View style={styles.buttonsright}>
-            <Button
-              title="Top Pin"
-              onPress={() => {
-                this.updateScoreMode("red top pin");
-              }}
-            />
-            <Button
-              title="Ride"
-              onPress={() => {
-                this.updateScoreMode("red ride");
-              }}
-            />
-            <Button
-              title="Back"
-              onPress={() => {
-                this.updateScoreMode("red back");
-              }}
-            />
-          </View>
-
-          {this.renderResetButton()}
-        </View>
+        {this.renderResetButton()}
       </View>
     );
   }

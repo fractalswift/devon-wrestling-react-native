@@ -1,13 +1,15 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, Button } from "react-native";
 
-const MatchTimer = props => {
+const CountDown = props => {
   // If timeRemaining is a string that means the match is ended
   // and we will return the string instead of time
 
   if (typeof props.timeRemaining === "string") {
     return (
       <View>
+        <Button title={props.centralButton} onPress={props.startTimer} />
+
         <Text style={styles.status}>{props.matchStatus}</Text>
         <Text style={styles.time}> {props.timeRemaining}</Text>
         <Text style={styles.status}>{props.scoringMode}</Text>
@@ -28,6 +30,8 @@ const MatchTimer = props => {
 
     return (
       <View>
+            <Button title={props.centralButton} onPress={props.startTimer} />
+
         <Text style={styles.status}>{props.matchStatus}</Text>
         <Text style={styles.time}>
           {" "}
@@ -39,7 +43,7 @@ const MatchTimer = props => {
   }
 };
 
-export default MatchTimer;
+export default CountDown;
 
 // Styles
 

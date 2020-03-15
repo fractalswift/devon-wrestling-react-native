@@ -6,14 +6,16 @@ const ButtonPanel = props => {
   // and we will return the string instead of time
 
   return(
+     
+    <View>
     <Button
           title="Neutral"
           onPress={() => {
             props.updateScoreMode("Neutral");
           }}
         />
+        <View style={styles.buttons}>
 
-        <View style={styles.bottomhalf}>
           <View style={styles.buttonsleft}>
             <Button
               title="Top Pin"
@@ -53,6 +55,7 @@ const ButtonPanel = props => {
                 props.updateScoreMode("red back");
               }}
             />
+          </View>
           </View>
           </View>
   )
@@ -107,11 +110,5 @@ const styles = StyleSheet.create({
     padding: 10
   },
 
-  buttons: {
-    display: "flex",
-    justifyContent: "space-between",
-    height: 500,
-    //backgroundColor: 'red',
-    alignItems: "center"
-  }
+
 });

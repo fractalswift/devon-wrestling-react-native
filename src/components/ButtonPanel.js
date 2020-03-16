@@ -19,7 +19,7 @@ const ButtonPanel = props => {
   return (
     <View>
       <Button
-        color={showPressed("Neutral", "lavender", "mediumpurple")}
+        color={showPressed("Neutral", "mediumpurple", "indigo")}
         title="Neutral"
         onPress={() => {
           props.updateScoreMode("Neutral");

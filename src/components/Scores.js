@@ -34,27 +34,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
 
-  tophalf: {
-    display: "flex",
-    flex: 2
-  },
-
-  bottomhalf: {
-    display: "flex",
-    flex: 3,
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  time: {
-    fontSize: 52,
-    textAlign: "center"
-  },
-
-  status: {
-    textAlign: "center"
-  },
-
   scores: {
     display: "flex",
     flexDirection: "row",
@@ -65,36 +44,17 @@ const styles = StyleSheet.create({
 
   bluescore: {
     color: "blue",
-    borderStyle:'solid',
+    borderStyle: "solid",
     borderWidth: 2,
-    borderColor: 'blue',
+    borderColor: "blue",
     fontSize: 18
   },
 
   redscore: {
     color: "red",
-    borderStyle:'solid',
+    borderStyle: "solid",
     borderWidth: 2,
-    borderColor: 'red',
+    borderColor: "red",
     fontSize: 18
-  },
-
-  buttons: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  text: {
-    fontSize: 30,
-    textAlign: "center",
-    padding: 10
-  },
-
-  buttons: {
-    display: "flex",
-    justifyContent: "space-between",
-    height: 500,
-    alignItems: "center"
   }
 });

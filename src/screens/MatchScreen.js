@@ -7,6 +7,7 @@ import ButtonPanel from "../components/ButtonPanel";
 
 class MatchScreen extends React.Component {
   state = {
+    // Match states
     timeRemaining: this.props.navigation.getParam("data"),
     matchStatus: "ready",
     scoringMode: "Neutral",
@@ -184,52 +185,6 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flex: 1
-  },
-
-  tophalf: {
-    display: "flex",
-    flex: 2
-  },
-
-  bottomhalf: {
-    display: "flex",
-    flex: 3,
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  time: {
-    fontSize: 52,
-    textAlign: "center"
-  },
-
-  status: {
-    textAlign: "center"
-  },
-
-  scores: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  buttons: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  text: {
-    fontSize: 30,
-    textAlign: "center",
-    padding: 10
-  },
-
-  buttons: {
-    display: "flex",
-    justifyContent: "space-between",
-    height: 500,
-    alignItems: "center"
   }
 });
 

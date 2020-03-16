@@ -8,10 +8,12 @@ const CountDown = props => {
   if (typeof props.timeRemaining === "string") {
     return (
       <View>
-        <Button color="green"
-        title={props.centralButton} onPress={props.startTimer} />
+        <Button
+          color="green"
+          title={props.centralButton}
+          onPress={props.startTimer}
+        />
 
-        <Text style={styles.status}>{props.matchStatus}</Text>
         <Text style={styles.time}> {props.timeRemaining}</Text>
         <Text style={styles.status}>{props.scoringMode}</Text>
       </View>
@@ -29,11 +31,22 @@ const CountDown = props => {
       seconds = `0${seconds}`;
     }
 
+    const getButtonColor = centralButton => {
+      if (centralButton == "Pause") {
+        return "lightgray";
+      } else {
+        return "springgreen";
+      }
+    };
+
     return (
       <View>
-            <Button color="green" title={props.centralButton} onPress={props.startTimer} />
+        <Button
+          color={getButtonColor(props.centralButton)}
+          title={props.centralButton}
+          onPress={props.startTimer}
+        />
 
-        <Text style={styles.status}>{props.matchStatus}</Text>
         <Text style={styles.time}>
           {" "}
           {minutes}:{seconds}
@@ -49,23 +62,6 @@ export default CountDown;
 // Styles
 
 const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    flex: 1
-  },
-
-  tophalf: {
-    display: "flex",
-    flex: 2
-  },
-
-  bottomhalf: {
-    display: "flex",
-    flex: 3,
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
   time: {
     fontSize: 52,
     textAlign: "center"
@@ -73,31 +69,5 @@ const styles = StyleSheet.create({
 
   status: {
     textAlign: "center"
-  },
-
-  scores: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  buttons: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-
-  text: {
-    fontSize: 30,
-    textAlign: "center",
-    padding: 10
-  },
-
-  buttons: {
-    display: "flex",
-    justifyContent: "space-between",
-    height: 500,
-    //backgroundColor: 'red',
-    alignItems: "center"
   }
 });

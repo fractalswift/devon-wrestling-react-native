@@ -32,6 +32,7 @@ class HomeScreen extends React.Component {
   <Button title='5 Minute Match' onPress={()=> this.goToMatchScreen(300)}/>
   <Button title='6 Minute Match' onPress={()=> this.goToMatchScreen(360)}/>
   <Button title='7 Minute Match' onPress={()=> this.goToMatchScreen(420)}/>
+  <Button title='About' onPress={()=> this.props.navigation.navigate('Rules')}/>
 
  
   </View>

@@ -10,30 +10,20 @@ class RulesScreen extends React.Component {
       <View style={styles.container}>
 
 
-        <Text style={styles.text}>RULE SET</Text>
+        <Text style={styles.text}>ABOUT</Text>
 
-        <Text>Devon Wrestling is a form of wrestling that was popular in the 19th century
-          Many of the techniques popular in Catch Wrestling and modern Submission
+        <Text style={{padding:10}}>Devon Wrestling is a form of wrestling that was popular in the 19th century. </Text>
+        <Text style={{padding:10}}>Many of the techniques popular in Catch Wrestling and modern Submission
           Wrestling may have originated in Devon Wrestling.
         </Text>
 
-        <Text style={{color: 'blue'}}
+        <Text style={{color: 'blue', padding:10}}
       onPress={() => Linking.openURL('https://en.wikipedia.org/wiki/Devon_wrestling')}>
   Devon Wrestling Wikipedia
 </Text>
 
-      <Text style={styles.h2}>Modern Rules</Text>
-
-      <Text>Winnner by any legal submission. In case of no winner by
-        end of match, winner is the competitor with the highest score.
-        Points are awarded for time in control:
-      </Text>
-
-      <Text style={{padding:10}}>Top Pin control: 1 point per second of control</Text>
-      <Text style={{padding:10}}>Ride Control: 2 points per second of control</Text>
-      <Text style={{padding:10}}>Backcontrol: 3 points per second of control</Text>
-
-
+<Text style={{padding:10}}>This app is in beta while the rule set of Devon Wrestling
+is being live tested. Any feedback welcome.</Text>
 
       
         

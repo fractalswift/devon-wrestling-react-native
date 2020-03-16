@@ -35,7 +35,7 @@ const CountDown = props => {
       if (centralButton == "Pause") {
         return "lightgray";
       } else {
-        return "springgreen";
+        return "green";
       }
     };
 

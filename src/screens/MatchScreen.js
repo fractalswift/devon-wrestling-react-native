@@ -131,21 +131,12 @@ class MatchScreen extends React.Component {
   };
 
   renderResetButton = () => {
-    if (this.state.matchStatus == "paused") {
+    if (
+      this.state.matchStatus == "paused" ||
+      this.state.matchStatus == "matchended"
+    ) {
       return (
         <View>
-          <Button
-            title="RESET"
-            onPress={() => this.props.navigation.navigate("Home")}
-          >
-            RESET
-          </Button>
-        </View>
-      );
-    } else if (this.state.matchStatus == "matchended") {
-      return (
-        <View>
-          <Text>{this.state.matchResult}</Text>
           <Button
             title="RESET"
             onPress={() => this.props.navigation.navigate("Home")}
@@ -158,32 +149,32 @@ class MatchScreen extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
-          <CountDown
-            matchStatus={this.state.matchStatus}
-            timeRemaining={this.state.timeRemaining}
-            scoringMode={this.state.scoringMode}
-            startTimer={this.startTimer}
-            centralButton={this.state.centralButton}
-          />
+        <CountDown
+          matchStatus={this.state.matchStatus}
+          timeRemaining={this.state.timeRemaining}
+          scoringMode={this.state.scoringMode}
+          startTimer={this.startTimer}
+          centralButton={this.state.centralButton}
+        />
 
-          <Scores
-            blueTopScore={this.state.blueTopScore}
-            blueRideScore={this.state.blueRideScore}
-            blueBackScore={this.state.blueTopScore}
-            blueTotalScore={this.state.blueTotalScore}
-            redTopScore={this.state.redTopScore}
-            redRideScore={this.state.redRideScore}
-            redBackScore={this.state.redTopScore}
-            redTotalScore={this.state.redTotalScore}
-          />
+        <Scores
+          blueTopScore={this.state.blueTopScore}
+          blueRideScore={this.state.blueRideScore}
+          blueBackScore={this.state.blueBackScore}
+          blueTotalScore={this.state.blueTotalScore}
+          redTopScore={this.state.redTopScore}
+          redRideScore={this.state.redRideScore}
+          redBackScore={this.state.redBackScore}
+          redTotalScore={this.state.redTotalScore}
+        />
 
-        <ButtonPanel 
-        updateScoreMode={this.updateScoreMode}/>
-
-        {this.renderResetButton()}
+        <ButtonPanel
+          updateScoreMode={this.updateScoreMode}
+          renderResetButton={this.renderResetButton}
+          scoringMode={this.state.scoringMode}
+        />
       </View>
     );
   }
@@ -238,7 +229,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
     height: 500,
-    //backgroundColor: 'red',
     alignItems: "center"
   }
 });

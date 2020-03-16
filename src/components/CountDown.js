@@ -8,7 +8,8 @@ const CountDown = props => {
   if (typeof props.timeRemaining === "string") {
     return (
       <View>
-        <Button title={props.centralButton} onPress={props.startTimer} />
+        <Button color="green"
+        title={props.centralButton} onPress={props.startTimer} />
 
         <Text style={styles.status}>{props.matchStatus}</Text>
         <Text style={styles.time}> {props.timeRemaining}</Text>
@@ -30,7 +31,7 @@ const CountDown = props => {
 
     return (
       <View>
-            <Button title={props.centralButton} onPress={props.startTimer} />
+            <Button color="green" title={props.centralButton} onPress={props.startTimer} />
 
         <Text style={styles.status}>{props.matchStatus}</Text>
         <Text style={styles.time}>

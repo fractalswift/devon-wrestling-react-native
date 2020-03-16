@@ -27,13 +27,11 @@ class HomeScreen extends React.Component {
   <View style={styles.buttons}>
   <Image source={devonFlag}  />
 
-  <Button title='Test Match' onPress={()=> this.goToMatchScreen(4)}/>
   <Button title='3 Minute Match' onPress={()=> this.goToMatchScreen(180)}/>
   <Button title='4 Minute Match' onPress={()=> this.goToMatchScreen(240)}/>
   <Button title='5 Minute Match' onPress={()=> this.goToMatchScreen(300)}/>
   <Button title='6 Minute Match' onPress={()=> this.goToMatchScreen(360)}/>
-  <Button title='7 Minute Match' onPress={()=> this.goToMatchScreen(720)}/>
-  <Button title='Rules' onPress={()=> this.props.navigation.navigate('Rules')}/>
+  <Button title='7 Minute Match' onPress={()=> this.goToMatchScreen(420)}/>
 
  
   </View>

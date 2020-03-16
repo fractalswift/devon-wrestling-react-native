@@ -1,65 +1,98 @@
 import React from "react";
-import { Text, StyleSheet, View, Button} from "react-native";
+import { Text, StyleSheet, View, Button } from "react-native";
+
+import ControlButton from './ControlButton'
+
+
+
+ 
+
+
 
 const ButtonPanel = props => {
   // If timeRemaining is a string that means the match is ended
   // and we will return the string instead of time
 
-  return(
-     
-    <View>
-    <Button
-          title="Neutral"
-          onPress={() => {
-            props.updateScoreMode("Neutral");
-          }}
-        />
-        <View style={styles.buttons}>
+  // helper function for button style depending on game state
 
-          <View style={styles.buttonsleft}>
-            <Button
-              title="Top Pin"
-              onPress={() => {
-                props.updateScoreMode("blue top pin");
-              }}
-            />
-            <Button
-              title="Ride"
-              onPress={() => {
-                props.updateScoreMode("blue ride");
-              }}
-            />
-            <Button
-              title="Back"
-              onPress={() => {
-                props.updateScoreMode("blue back");
-              }}
-            />
-          </View>
-          <View style={styles.buttonsright}>
-            <Button
-              title="Top Pin"
-              onPress={() => {
-                props.updateScoreMode("red top pin");
-              }}
-            />
-            <Button
-              title="Ride"
-              onPress={() => {
-                props.updateScoreMode("red ride");
-              }}
-            />
-            <Button
-              title="Back"
-              onPress={() => {
-                props.updateScoreMode("red back");
-              }}
-            />
-          </View>
-          </View>
-          </View>
-  )
+  // Note buttonTitle actual means button function, e.g it must
+  // match the scoringMode state in parent, but cannot call it scoringMode
+  // as we already use that and calling it "function" would probably 
+  // be even more confusing
+
+ const showPressed = (buttonTitle, unpressedColor, pressedColor) => {
+
+  return buttonTitle == props.scoringMode ? pressedColor : unpressedColor;
+
 }
+
+
+
+  
+
+  return (
+    <View>
+      <Button
+        color={showPressed('Neutral', 'lavender', 'mediumpurple')}
+        title="Neutral"
+        onPress={() => {
+          props.updateScoreMode("Neutral");
+        }}
+      />
+      <View style={styles.buttons}>
+        <View style={styles.buttonsleft}>
+        
+          <Button
+            color={showPressed('blue top pin', 'lightskyblue', 'mediumblue')}
+            title="Top Pin"
+            onPress={() => {
+              props.updateScoreMode("blue top pin");
+            }}
+          />
+          <Button
+            color={showPressed('blue ride', 'lightskyblue', 'mediumblue')}
+            title="Ride"
+            onPress={() => {
+              props.updateScoreMode("blue ride");
+            }}
+          />
+          <Button
+            color={showPressed('blue back', 'lightskyblue', 'mediumblue')}
+            title="Back"
+            onPress={() => {
+              props.updateScoreMode("blue back");
+            }}
+          />
+        </View>
+        <View style={styles.buttonsright}>
+          <Button
+            color={showPressed('red top pin', 'lightcoral', 'red')}
+            title="Top Pin"
+            onPress={() => {
+              props.updateScoreMode("red top pin");
+            }}
+          />
+          <Button
+            color={showPressed('red ride', 'lightcoral', 'red')}
+            title="Ride"
+            onPress={() => {
+              props.updateScoreMode("red ride");
+            }}
+          />
+          <Button
+            color={showPressed('red back', 'lightcoral', 'red')}
+            title="Back"
+            onPress={() => {
+              props.updateScoreMode("red back");
+            }}
+          />
+        </View>
+      </View>
+
+      {props.renderResetButton()}
+    </View>
+  );
+};
 
 export default ButtonPanel;
 
@@ -101,7 +134,9 @@ const styles = StyleSheet.create({
   buttons: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    height: "60%",
+    paddingTop: 10
   },
 
   text: {
@@ -110,5 +145,20 @@ const styles = StyleSheet.create({
     padding: 10
   },
 
+  buttonsleft: {
+    width: "40%",
+    margin: 10,
+    height: "60%",
+    display: "flex",
+    justifyContent: "space-around"
+  },
+
+  buttonsright: {
+    width: "40%",
+    margin: 10,
+    height: "60%",
+    display: "flex",
+    justifyContent: "space-around"
+  },
 
 });

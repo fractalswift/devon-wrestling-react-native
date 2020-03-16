@@ -29,9 +29,9 @@ class RulesScreen extends React.Component {
         Points are awarded for time in control:
       </Text>
 
-      <Text>Top Pin control: 1 point per second of control</Text>
-      <Text>Ride Control: 2 points per second of control</Text>
-      <Text>Backcontrol: 3 points per second of control</Text>
+      <Text style={{padding:10}}>Top Pin control: 1 point per second of control</Text>
+      <Text style={{padding:10}}>Ride Control: 2 points per second of control</Text>
+      <Text style={{padding:10}}>Backcontrol: 3 points per second of control</Text>
 
 
 
@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
 
   container: {
     display: 'flex',
-    flex: 1
+    flex: 1,
+    padding:5,
+    textAlign: 'center'
   },
   
   tophalf:{
@@ -93,7 +95,8 @@ const styles = StyleSheet.create({
   },
 
   h2:{
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 20
 
   },
 

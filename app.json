@@ -25,6 +25,11 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.devonwrestling.devonwrestling",
+      "versionCode": 2,
+      "permissions": []
     }
   }
 }
